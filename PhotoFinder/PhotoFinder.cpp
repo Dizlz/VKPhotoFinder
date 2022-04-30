@@ -5,7 +5,7 @@
 
 using namespace std;
 
-bool choseYesOrNot()
+bool choseYesOrNot()        //Функция ввода ответа пользователя
 {
     string chose;
     cin >> chose;
@@ -25,7 +25,7 @@ bool choseYesOrNot()
     }    
 }
 
-int NumberOfFiles(string placeLink)
+int NumberOfFiles(string placeLink)         //Функция подсчета количества файлов     
 {
     ifstream filemess;
 
@@ -52,7 +52,7 @@ int NumberOfFiles(string placeLink)
     return g;
 }
 
-int SearchWord(int s, bool OpenLinksBool, string placeLink, int choseObject)
+int SearchImage(int s, bool OpenLinksBool, string placeLink, int choseObject)        //Функция поиска изображений в файле
 {
     ifstream filemess;
     
@@ -60,7 +60,7 @@ int SearchWord(int s, bool OpenLinksBool, string placeLink, int choseObject)
     char stopkey = {}, line[30000];
     string str, stopword = "</html>";
     int currentpos = 0, i = 0;
-    size_t pos;
+    size_t pos = 0;
     bool person = true;
     LPCWSTR wideString;
     LPCTSTR wideStringFile;
@@ -189,7 +189,7 @@ int main()
        
         for (int s = minf; s <= maxf; s += 50)
         {
-            i += SearchWord(s, OpenLinksBool, placeLink, choseObject);
+            i += SearchImage(s, OpenLinksBool, placeLink, choseObject);
             cout << s << endl;
         }
 
